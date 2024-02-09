@@ -11,7 +11,6 @@ class Grid {
 		int grid[20][10]; // variable to store the grid
 	
 	private:
-		std::vector<Color> GetCellColors(); // function to get all the block colors used in the game
 		int numRows; // variable to store the num of rows in the grid
 		int numCols; // variable to store the num of cols in the grid
 		int cellSize; // variable to store the size of each cell in the grid

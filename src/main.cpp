@@ -1,5 +1,8 @@
 #include <raylib.h>
 #include "grid.h"
+#include "blocks.cpp"
+
+
 
 int main() {
 	// stores the color as a struct defined in the raylib library
@@ -14,9 +17,9 @@ int main() {
 	// setup a grid that will hold the current state of ur tetris
 	Grid grid = Grid();
 	grid.Initialize();
-	grid.grid[0][0] = 1;
-	grid.grid[7][8] = 5;
 	grid.Print();
+
+	LBlock block = LBlock();
 
 	// game loop
 	while(!WindowShouldClose()) {
@@ -28,6 +31,8 @@ int main() {
 		
 		// draws the grid on to the screen
 		grid.Draw();
+
+		block.Draw();
 
 		EndDrawing();
 	}
