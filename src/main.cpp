@@ -1,8 +1,5 @@
 #include <raylib.h>
-#include "grid.h"
-#include "blocks.cpp"
-
-
+#include "game.h"
 
 int main() {
 	// stores the color as a struct defined in the raylib library
@@ -13,27 +10,22 @@ int main() {
 	
 	// sets the frames to be drawn per second (if not specified the frames are drawn as many as possible by the hardware which we do not want in this case as it move the tetris blocks faster on a betteer pc) 
 	SetTargetFPS(60);
-	
-	// setup a grid that will hold the current state of ur tetris
-	Grid grid = Grid();
-	grid.Initialize();
-	grid.Print();
 
-	LBlock block = LBlock();
+	Game game = Game();
 
 	// game loop
 	while(!WindowShouldClose()) {
+		game.HandleInput();
+
+
 		// provides an empty canvas to draw on
 		BeginDrawing();
 		
 		// clears the new background and fills in the new background color specified
 		ClearBackground(darkBlue);
+
+		game.Draw();
 		
-		// draws the grid on to the screen
-		grid.Draw();
-
-		block.Draw();
-
 		EndDrawing();
 	}
 	

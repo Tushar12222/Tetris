@@ -8,6 +8,7 @@ class Grid {
 		void Initialize(); // function to initialize grid
 		void Print(); // function to print the grid
 		void Draw(); // function to draw the grid on to the screen
+		bool IsCellOutside(int row, int col); // // func to check if aa cell is outside the game grid
 		int grid[20][10]; // variable to store the grid
 	
 	private:
