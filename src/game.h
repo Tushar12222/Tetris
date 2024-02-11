@@ -16,6 +16,7 @@ class Game {
 
 	private:
 		bool IsBlockOutside(); // func to check if any cell is outside the gaame grid
+		void RotateBlock(); // func to handle rotation of the blocks
 		std::vector<Block> blocks; // holds all the possible blocks in the game 
 		Block currentBlock; // holds the current block being displayed on the screen
 		Block nextBlock; // holds the next block that will be drawn to the screen

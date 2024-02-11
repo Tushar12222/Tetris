@@ -49,6 +49,10 @@ void Game::HandleInput() {
 		case KEY_DOWN:
 			MoveBlockDown();
 			break;
+
+		case KEY_UP:
+			RotateBlock();
+			break;
 	}
 }
 
@@ -77,4 +81,11 @@ bool Game::IsBlockOutside() {
 		if(grid.IsCellOutside(item.row, item.col)) return true;
 	}
 	return false;
+}
+
+// implementing hte rotateblock func that handles the rotation of the block
+void Game::RotateBlock() {
+	currentBlock.Rotate();
+	if(IsBlockOutside())
+		currentBlock.UndoRotation();
 }
