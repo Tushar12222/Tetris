@@ -10,12 +10,12 @@ Block::Block() {
 }
 
 // implementation of the draw func that draws the block to the screen
-void Block::Draw() {
+void Block::Draw(int offsetx, int offsety) {
 	// gets the current cell coordinates for the current rotation state and offset
 	std::vector<Position> tiles = GetCellPositions();
 	
 	for(Position item: tiles) {
-		DrawRectangle(item.col * cellSize+1, item.row * cellSize+1, cellSize-1, cellSize-1, colors[id]);
+		DrawRectangle(item.col * cellSize+offsetx, item.row * cellSize+offsety, cellSize-1, cellSize-1, colors[id]);
 	}
 }
 

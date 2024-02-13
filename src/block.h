@@ -8,7 +8,7 @@ class Block {
 	public:
 		Block(); // constructor
 		int id; // id tells us the color off the block
-		void Draw(); // draws the block to the screen
+		void Draw(int offsetx, int offsety); // draws the block to the screen
 		void Move(int rows, int cols); // func to move the block
 		void Rotate(); // func to handle block rotation
 		void UndoRotation(); // func to undo the previous rotation
